@@ -30,3 +30,11 @@ echo "The input file is ${input_file}, no of columns are ${no_of_columns}"
 # awk 'BEGIN{FS="\t"} {if (NR>1 && $4!="NA") print $4}' SARGAM_COSMIC_REFSEQ_GWAS.txt | wc -l
 # awk 'BEGIN{FS="\t"} {if (NR>1 && $2!="NA") print $2}' SARGAM_COSMIC_REFSEQ_GWAS.txt | wc -l
 # awk 'BEGIN{FS="\t"} {if (NR>1 && $2!="NA") print $2}' SARGAM_SNP.txt | wc -l
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $8!="NA") print $8 }' SARGAM_Allele_frequency.txt | awk '{if ($1<0.01) sum++} END{print sum}'
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $8!="NA") print $8 }' SARGAM_Allele_frequency.txt | awk '{if ($1>0.05) sum++} END{print sum}'
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $8!="NA") print $8 }' SARGAM_Allele_frequency.txt | awk '{if ($1>=0.01 && $1<=0.05) sum++} END{print sum}'
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $10!="NA") print $10 }' SARGAM_Allele_frequency.txt | awk '{if ($1<0.01) sum++} END{print sum}'
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $10!="NA") print $10 }' SARGAM_Allele_frequency.txt | awk '{if ($1>0.05) sum++} END{print sum}'
+# awk 'BEGIN{FS="\t"} {if (NR>1 && $10!="NA") print $10 }' SARGAM_Allele_frequency.txt | awk '{if ($1>=0.01 && $1<=0.05) sum++} END{print sum}'
+
+
