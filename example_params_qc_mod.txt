@@ -1,0 +1,34 @@
+filename example_qc
+xwasloc /BXRX_STAFF/vishram.terse/XWAS/Github_version/xwas-3.0-master/bin
+eigstratloc /BXRX_STAFF/vishram.terse/EIG-6.1.4/bin
+excludexchrPCA	YES
+build 38
+alpha 0.05      # This value is now obsolete, the HWE value is used instead
+plinkformat bed
+exclind 0
+maf 0.05       # Used for QC tests, value can be changed to 0.05 ?, original value was 0.005 
+missindiv 0.1
+missgeno 0.1
+numpc 10
+related 0.2   # Recommeded value is 0.088, original value used was 0.125, can be modified to 0.088
+quant 0
+
+# New parameters introduced 
+Gender_check NO # For array data set it to YES, for exome data set it to NO
+perform_PCA no  # (YES/NO) , this will include / exclude the pca step
+HWE 1e-6        # Values in scientific notation for HWE cutoff, earlier it was obtained by dividing alpha by total SNPs 
+pval_cutoff 0.01    # For the X specific QC
+
+# Allele frequency calculation
+default_case_control NO
+    cases YES	#(YES/NO) to perform frequency calculation for case and control separately, default YES
+    controls YES
+default_male_female NO 
+    males YES	#(YES/NO) to perform frequency calculation for males and females separately, default YES
+    females YES
+
+# Sex stratified association tests
+P_comb_method fishers       # (fishers/stouffers), default is fishers
+confidence_interval 0.95    # 
+
+# Filter out according to pval output output file is named *.significant
