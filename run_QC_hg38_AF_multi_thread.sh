@@ -202,7 +202,7 @@ fi
 # PC
 echo -e "7: Population stratification"
 
-${xwasloc}/$xwasQ --bfile ${fname}_qc3 --extract ${fname}_qc2.prune.in --recode12 --out ${fname}_qc3
+${xwasloc}/$xwasQ --bfile ${fname}_qc3 --extract ${fname}_qc2.prune.in --`recode`12 --out ${fname}_qc3
 echo "RAn first xwas fine"
 if [ $perform_pca = "yes" ]; then
 	# convert to eigenstrat format
